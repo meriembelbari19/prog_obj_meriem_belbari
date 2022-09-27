@@ -1,0 +1,28 @@
+/*
+	1.2 ça complète automatiquement en inscrivant system.out.println
+	1.3 ça propose la méthode to String
+	1.4 ça propose la methode main
+	1.5 ça propose d'implémenter le constructeur de la classe. Ensuite si on tap set et ctrl + space ça nous propose d'implémenter un setter pour le champ foo créer précédemment.
+	1.6 ça permet de refractor le nom de la classe (renommer le nom de classe partout où elle est utilisée) et idem sur le champs foo également (renommer le nom du champs partout où il est utilisé)
+	1.7 Ctrl + clic sur une classe permet de se rendre à la déclaration de classe, donc ici en le faisant sur String on se rend à la déclaration de la classe String avec les méthodes qu'elle implémente.
+ 	2.1 Le code marche car malgré que l'attribut soit privé on execute le code dans la meme classe 
+  	2.2 Le code ne marche pas parce que les attributs x et y sont privés et on a pas accès à ces attributs
+  	dans la classe TestPoint et pour avoir accès à ces attributs il faut utiliser les getters
+   	2.4 An accessor est une methode qui donne acces à un attribut privée d'une classe depuis une autre classe
+   	il peut etre soit un getter pour acceder a la valeur de l'attribut ou bien un setter pour modifier la valeur 
+   	de cet attribut. Dans ce cas, on doit utiliser un getter pour acceder aux valeurs de x et y de la classe Point 
+   	2.5 Le probleme dans ce cas provient du constructeur Point qui a en entrée 2 attributs alors que dans notre 
+   	methode main on a fait appel à un contructeur sans arguments
+   	2.6 il n y aura pas de probleme quand on change les entrées de Point en x et y sauf si on oublie d'ajouter
+  	this lors de l'affectation et dans ce cas x represente la valeur de x du constructeur et this.x l'attribut de la classe
+  	2.7 Pour garder trace des points créés on rajoute une variable cpt 
+ 	2.8 Le compilateur connait quel constructeur à compiler grace aux entrées si c'est deux entiers il execute le premier
+  	à l'inverse si c'est un point il execute le 2eme
+   	3.1 Le code affiche vrai pour p1==p2 et faux pour p1==p3 car c'est une comparaison par reference et non pas par valeur
+   	3.2 Le problème est que indexOf renvoie -1 pour le point p3 ce qui veut dire que p3 n'existe pas dans la liste malgré qu'il aie les 
+   	meme coordonnées que p1 car il fait une comparaison par reference et non pas par valeur
+   	IndexOf utilise la méthode equals pour comparer deux objets, donc pour résoudre le problème, il faut redefinir equals 
+  	4.2 Pour ne pas depasser la capacité maximale du tabeau on doit verifier si la taille du tableau < maxPoints avant d ajouter 
+  	le point au tableau
+   	4.5 Lors de l'execution de la ligne add(null) Polyline ajoute null au tableau points, Objects.requireNonnull(o) leve une exception lors de l'ajout de null
+ */
